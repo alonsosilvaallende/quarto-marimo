@@ -1,0 +1,22 @@
+---
+title: "test-quarto-marimo"
+filters:
+  - marimo-team/marimo
+---
+```python {.marimo}
+import marimo as mo
+
+slider = mo.ui.slider(1, 30)
+```
+
+```python {.marimo}
+mo.md(
+    f"""
+    This is a **reactive** Python notebook that **runs automatically**
+    when you modify them or
+    interact with UI elements, like this slider: {slider}
+
+    {"##" + "🍃" * slider.value}
+    """
+).callout("info")
+```
